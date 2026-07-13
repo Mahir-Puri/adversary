@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Reports produced by runs
+report.html
+report.json
+*.report.html
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
