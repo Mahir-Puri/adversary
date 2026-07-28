@@ -22,3 +22,7 @@ report.json
 .vscode/
 .idea/
 .DS_Store
+
+# Demo recordings
+demo.cast
+demo.gif
