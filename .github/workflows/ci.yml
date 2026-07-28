@@ -21,6 +21,7 @@ jobs:
       - name: Install
         run: |
           pip3 install --upgrade pip setuptools wheel
+          pip3 uninstall adversary-harness -y || true
           pip3 install -e ".[dev]"
       - name: Run tests
         run: pytest -q --cov=adversary --cov-report=term-missing
@@ -37,11 +38,8 @@ jobs:
       - name: Install
         run: |
           pip3 install --upgrade pip setuptools wheel
+          pip3 uninstall adversary-harness -y || true
           pip3 install -e .
-      # This demonstrates the CI gate. The bundled demo agent is intentionally
-      # vulnerable, so we run it in report-only mode (|| true) and upload the
-      # HTML report as an artifact. Point --target at YOUR agent and drop the
-      # '|| true' to make a landed HIGH+ attack actually fail the build.
       - name: Run adversary suite
         run: |
           adversary run \
